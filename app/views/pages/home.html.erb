@@ -1,0 +1,29 @@
+<h1>Welcome to Airbnb <%= @user %></h1>
+
+<%= link_to 'About Us', about_path %>
+<%= link_to 'Login now', login_path %>
+
+<form action='search' class='my-3'>
+  <label for=''>Location</label>
+  <input type='text' name='location'>
+
+  <label for=''>Check in</label>
+  <input type='date' name='checkin'>
+
+  <label for=''>Check out</label>
+  <input type='date' name='checkout'>
+
+  <input type='submit'>
+</form>
+
+<ul>
+  <% @flats.each do |flat| %>
+   <div class="card" style="width: 18rem;">
+    <img src="https://source.unsplash.com/1600x900/?<%= flat %>" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"><%= flat %></h5>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  <% end %>
+</ul>
